@@ -1,0 +1,26 @@
+**/target
+**/devlog
+**/bin
+**/trash
+**/.settings
+**/pom.xml.tag
+**/pom.xml.releaseBackup
+**/pom.xml.versionsBackup
+**/pom.xml.next
+**/release.properties
+**/dependency-reduced-pom.xml
+**/.build.properties
+**/output.log
+## **/.classpath
+## **/.project
+**/.recommenders
+
+/game/assets/*
+/tools/assets/*
+##/.gitignore
+/.cache-main
+/Servers
+/trash
+/.recommenders
+/.metadata
+/RemoteSystemsTempFiles
