@@ -2,7 +2,7 @@ package lessons.scala.numbers.rational
 
 import scala.annotation.tailrec
 
-class Rational( n: Int, d: Int ) {
+class Rational( n: Int, d: Int ) extends Ordered[ Rational ] {
   // Check Arguments
   require( d != 0 )
   
@@ -30,7 +30,6 @@ class Rational( n: Int, d: Int ) {
     if( a == b ) a.abs
     else if( a > b ) gcd( a.abs, b.abs ) else gcd( b.abs, a.abs ) 
   }
-  
 
   final def +( o: Int ): Rational = { this + new Rational( o ) }
   final def -( o: Int ): Rational = { this - new Rational( o ) }
@@ -46,6 +45,10 @@ class Rational( n: Int, d: Int ) {
   final def -( o: Rational ): Rational = { new Rational( numerator * o.denominator - denominator * o.numerator, denominator * o.denominator ) }
   final def *( o: Rational ): Rational = { new Rational( numerator * o.numerator, denominator * o.denominator ) }
   final def /( o: Rational ): Rational = { new Rational( numerator * o.denominator, denominator * o.numerator ) }
+  
+  override def compare( that: Rational ): Int = {
+    this.numerator * that.denominator - this.denominator * that.numerator 
+  }
 }
 
 object Rational {
@@ -74,6 +77,11 @@ object Rational {
     2 - r1
     2 * r1
     2 / r1
+    
+    println( r1 > r2 )
+    println( r1 >= r2 )
+    println( r1 < r2 )
+    println( r1 <= r2 )
   }
   
 }
