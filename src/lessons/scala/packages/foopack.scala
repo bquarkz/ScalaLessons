@@ -3,26 +3,26 @@ package lessons.scala.packages
 package navigation {
   
   private[ packages ] class Navigator {
-    // será acessivel em Navigator
-    // será acessivel via herança
-    // será acessivel em todo o package: "packages"
+    // serï¿½ acessivel em Navigator
+    // serï¿½ acessivel via heranï¿½a
+    // serï¿½ acessivel em todo o package: "packages"
     protected[ packages ] def useStarChart: Unit = {}
     
     class LegOfJourney {
       // sera acessivel em LegOfJourney
-      // não será acessivel via herança
-      // será acessivel para outros elementos dentro de Navigator
+      // nï¿½o serï¿½ acessivel via heranï¿½a
+      // serï¿½ acessivel para outros elementos dentro de Navigator
       private[ Navigator ] val distance = 100
       
-      // não é possivel pois Vehicle não se encontra na mesma
-      // arvore de "LegOfJourney" que no caso é:
+      // nï¿½o ï¿½ possivel pois Vehicle nï¿½o se encontra na mesma
+      // arvore de "LegOfJourney" que no caso ï¿½:
       // LegOfJourney -> Navigator -> navigation -> packages
       // para o caso de Vehicle:
       // Vehicle -> launch -> packages
       //private[ Vehicle ] val distance2 = 100
       
       // sera acessivel somente em LegOfJourney
-      // não será acessivel via herança
+      // nï¿½o serï¿½ acessivel via heranï¿½a
       private[ this ] val sofar = 100000
     }
   }

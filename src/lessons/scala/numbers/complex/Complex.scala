@@ -17,7 +17,7 @@ class Complex( real:Double, imag:Double ) {
   final def this( r:Double ) = { this( r, 0 ) }
   
   // methods
-  override def toString():String = "[Complex Number] ( " + r + " ) + ( " + i + " )i"
+  override def toString:String = "[Complex Number] ( " + r + " ) + ( " + i + " )i"
   
   final def +( r:Double ):Complex = { this + Complex( r ) }
   final def -( r:Double ):Complex = { this - Complex( r ) }
@@ -30,9 +30,9 @@ class Complex( real:Double, imag:Double ) {
   final def /( c:Complex ):Complex = { require( c.r != 0.0 || c.i != 0.0 ); this * Complex( c.r / c.norma, -c.i / c.norma ) }
   
   final def ==( c:Complex ):Boolean = { ( r == c.r ) && ( i == c.i ) }
+  final def !=( c:Complex ):Boolean = { !( this == c ) }
   final def >( c:Complex ):Boolean = { module > c.module }
   final def <( c:Complex ):Boolean = { module < c.module }
-  final def !=( c:Complex ):Boolean = { !( this == c ) }
   final def >=( c:Complex ):Boolean = { ( this == c ) || ( this > c ) }
   final def <=( c:Complex ):Boolean = { ( this == c ) || ( this < c ) }
   
